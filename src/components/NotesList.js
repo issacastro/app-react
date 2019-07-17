@@ -7,18 +7,18 @@ export default class NotesList extends Component {
     note: []
   };
   getNotes = async ()=>{
-    const res = await axios.get("http://170.6.0.29:4000/api/notes");
+    const res = await axios.get("https://api-issac.herokuapp.com/api/notes");
     this.setState({ notes: res.data });
   }
  componentDidMount() {
     this.getNotes();
   }
   deleteNote = async (id) =>{
-    await axios.delete("http://170.6.0.29:4000/api/notes/"+id)
+    await axios.delete("https://api-issac.herokuapp.com/api/notes/"+id)
     this.getNotes();
   }
   editNote = async (id) =>{
-     const res = await axios.get("http://170.6.0.29:4000/api/notes/"+id);
+     const res = await axios.get("https://api-issac.herokuapp.com/api/notes/"+id);
      this.setState({ note: res.data });
      localStorage.setItem('note',JSON.stringify(res.data));
      this.props.history.push('/newnote');

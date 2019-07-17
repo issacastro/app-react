@@ -10,7 +10,7 @@ export default class CreateUser extends Component {
     this.getUsers();
   }
   getUsers = async () => {
-    const res = await axios.get("http://170.6.0.29:4000/api/users");
+    const res = await axios.get("https://api-issac.herokuapp.com/api/users");
     this.setState({ users: res.data });
   };
   handleInputChange = event => {
@@ -23,7 +23,7 @@ export default class CreateUser extends Component {
   };
   onSubmit = async event => {
     event.preventDefault();
-    await axios.post("http://170.6.0.29:4000/api/users", {
+    await axios.post("https://api-issac.herokuapp.com/api/users", {
       userName: this.state.userName,
       password: this.state.password
     });
@@ -34,7 +34,7 @@ export default class CreateUser extends Component {
     });
   };
    deleteUser= async (id)=>{
-   await axios.delete("http://170.6.0.29:4000/api/users/"+id);
+   await axios.delete("https://api-issac.herokuapp.com/api/users/"+id);
    this.getUsers();
   };
   render() {

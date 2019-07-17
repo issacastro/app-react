@@ -42,7 +42,7 @@ constructor(props){
           description: this.state.description,
           author: this.state.author
         }
-        this.state.stateedit ? await axios.put("http://170.6.0.29:4000/api/notes/"+this.state.note._id, note) :await axios.post("http://170.6.0.29:4000/api/notes", note);
+        this.state.stateedit ? await axios.put("https://api-issac.herokuapp.com/api/notes/"+this.state.note._id, note) :await axios.post("https://api-issac.herokuapp.com/api/notes", note);
         this.setState({
             title:'',
             description:'',
