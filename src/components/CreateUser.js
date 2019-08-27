@@ -4,6 +4,8 @@ export default class CreateUser extends Component {
   state = {
     users: [],
     userName: "",
+    userBoleta:"",
+    userCorreo:"",
     password: ""
   };
    componentDidMount() {
@@ -25,11 +27,15 @@ export default class CreateUser extends Component {
     event.preventDefault();
     await axios.post("https://api-issac.herokuapp.com/api/users", {
       userName: this.state.userName,
-      password: this.state.password
+      password: this.state.password,
+      userBoleta: this.state.userBoleta,
+      userCorreo: this.state.userCorreo
     });
     this.getUsers();
     this.setState({
       userName: "",
+      userBoleta:"",
+      userCorreo:"",
       password: ""
     });
   };
@@ -48,7 +54,7 @@ export default class CreateUser extends Component {
                   <input
                     type="text"
                     name="userName"
-                    placeholder="User Name"
+                    placeholder="Nombre Completo"
                     className="form-control"
                     autoComplete="username"
                     onChange={this.handleInputChange}
@@ -57,9 +63,30 @@ export default class CreateUser extends Component {
                 </div>
                 <div className="form-group">
                   <input
+                    type="text"
+                    name="userBoleta"
+                    placeholder="Boleta"
+                    className="form-control"
+                    autoComplete="username"
+                    onChange={this.handleInputChange}
+                    value={this.state.userBoleta}
+                  />
+                </div>                <div className="form-group">
+                  <input
+                    type="text"
+                    name="userCorreo"
+                    placeholder="Correo"
+                    className="form-control"
+                    autoComplete="username"
+                    onChange={this.handleInputChange}
+                    value={this.state.userCorreo}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
                     type="password"
                     name="password"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     className="form-control"
                     autoComplete="current-password"
                     onChange={this.handleInputChange}
@@ -67,13 +94,14 @@ export default class CreateUser extends Component {
                   />
                 </div>
                 <button type="submit" className="btn btn-primary btn-block">
-                  Create a User
+                  Registrar
                 </button>
               </form>
             </div>
           </div>
         </div>
-        <div className="col-md-7">
+        <div className="col-md-7 text-center">
+        Usuarios Registrados
           <ul className="list-group">
             {this.state.users.map(user => (
               <li

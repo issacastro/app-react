@@ -55,13 +55,13 @@ constructor(props){
             <div className="col-md-6 offset-md-3 p-3">
             <div className="card">
               <div className="card-body">
-              <legend className="text-center">New Task</legend>
+              <legend className="text-center">Publicar</legend>
                 <form onSubmit={this.onSubmit} >
                   <div className="form-group">
                     <input
                       type="text"
                       name="title"
-                      placeholder="Insert a Title"
+                      placeholder="Titulo"
                       className="form-control"
                       onChange={this.handleInputChange}
                       value={this.state.title}
@@ -72,7 +72,7 @@ constructor(props){
                       name="description"
                       cols="80"
                       className="form-control"
-                      placeholder="Insert a description"
+                      placeholder="Comentario"
                       onChange={this.handleInputChange}
                       value={this.state.description}
                     ></textarea>
