@@ -59,6 +59,8 @@ export default class CreateUser extends Component {
                     autoComplete="username"
                     onChange={this.handleInputChange}
                     value={this.state.userName}
+                    pattern="[A-Za-z]"
+                    title="Nombre invalido"
                   />
                 </div>
                 <div className="form-group">
@@ -70,11 +72,14 @@ export default class CreateUser extends Component {
                     autoComplete="username"
                     onChange={this.handleInputChange}
                     value={this.state.userBoleta}
+                    pattern="[/^[2000000000-2020000000]$/"
+                    title="Boleta invalida"
                   />
                 </div>                <div className="form-group">
                   <input
                     type="text"
                     name="userCorreo"
+                    type ="email"
                     placeholder="Correo"
                     className="form-control"
                     autoComplete="username"
