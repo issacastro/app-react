@@ -40,7 +40,7 @@ export default class CreateUser extends Component {
     });
   };
    deleteUser= async (id)=>{
-   await axios.delete("https://api-issac.herokuapp.com/api/users/"+id);
+   //await axios.delete("https://api-issac.herokuapp.com/api/users/"+id);
    this.getUsers();
   };
   render() {
