@@ -14,7 +14,7 @@ constructor(props){
       author:'',
       note:[],
       stateedit:false,
-      message: 'ADD TASK'
+      message: 'Publicar'
   }
   } else {
     this.state={
