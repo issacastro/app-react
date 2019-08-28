@@ -59,7 +59,7 @@ export default class CreateUser extends Component {
                     autoComplete="username"
                     onChange={this.handleInputChange}
                     value={this.state.userName}
-                    pattern="[A-Za-z]"
+                    pattern="|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|"
                     title="Nombre invalido"
                   />
                 </div>
