@@ -72,8 +72,7 @@ export default class CreateUser extends Component {
                     autoComplete="username"
                     onChange={this.handleInputChange}
                     value={this.state.userBoleta}
-                    pattern="/^[0-9]{10}$/"
-                    title="Boleta invalida"
+ 
                   />
                 </div>                <div className="form-group">
                   <input
