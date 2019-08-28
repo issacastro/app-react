@@ -5,7 +5,7 @@ export default class Navigation extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <Link className="navbar-brand" to="/">
-          MERN APP
+          Webapp
         </Link>
         <button
           className="navbar-toggler"
